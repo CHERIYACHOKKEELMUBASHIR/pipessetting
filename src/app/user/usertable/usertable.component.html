@@ -1,0 +1,42 @@
+
+
+
+<table class="table table-striped" >
+    
+    <thead>
+
+        <tr>
+            <th>Name</th>
+            <th>Company Name</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <th>
+                 <form>
+                    <input   class="btn btn-outline-dark" type="text" placeholder="Search Here" name="search" [(ngModel)]="search">
+                </form>
+            </th>
+            <th>
+                <form>
+                    <input   class="btn btn-outline-dark" type="text" placeholder="Search Here" name="searchs" [(ngModel)]="searchs">
+                </form>
+            </th>
+            <th>
+                <form>
+                    <input   class="btn btn-outline-dark" type="text" placeholder="Search Here" name="searchss" [(ngModel)]="searchss">
+                </form>
+            </th>
+        </tr>
+
+
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let data of element | pipe:search | pipes:searchs | pipess:searchss" [ngClass]="{'blue' : data.company.designation=='angular Developer'}">
+            <td>{{data.name}}</td>
+            <td>{{data.company.name}}</td>
+            <td>{{data.company.designation}}</td>
+
+        </tr>
+    </tbody>
+</table>
